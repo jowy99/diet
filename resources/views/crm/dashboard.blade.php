@@ -1,1 +1,3 @@
-<h2>hola</h2>
+@extends('crm.layout')
+@section('main')
+@endsection
