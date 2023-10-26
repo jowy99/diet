@@ -1,4 +1,4 @@
-@extends('layouts.guest')
+@extends('layouts.logins')
 
 @section('main')
 <div class="min-h-screen w-full mt-12 space-y-12">
@@ -7,8 +7,12 @@
         <div class="space-y-12 lg:w-full lg:h-full">
             <h2 class="text-center text-orange-500 font-semibold text-xl">Plan your week, eat better: Your menu, your lifestyle!</h2>
             <div class="grid grid-cols-2 gap-4">
-                <x-button>register</x-button>
-                <x-button variant="secondary">log in</x-button>
+                <a href="{{ route('auth.register') }}">
+                    <x-button>register</x-button>
+                </a>
+                <a href="{{ route('auth.login') }}">
+                    <x-button variant="secondary">log in</x-button>
+                </a>
             </div>
         </div>
     </div>

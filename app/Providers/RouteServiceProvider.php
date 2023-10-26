@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Providers;
 
@@ -17,16 +18,13 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/login';
+    public const HOME = '/admin';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */
     public function boot(): void
     {
-        RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
-        });
 
         $this->routes(function () {
             Route::middleware('api')
@@ -34,7 +32,30 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
+                ->as('web.')
                 ->group(base_path('routes/web.php'));
+
+            Route::middleware('web')
+                ->prefix('auth')
+                ->as('auth.')
+                ->group(base_path('routes/auth.php'));
+
+            Route::middleware([
+                'web',
+                'auth',
+                'verified',
+                'admin',
+            ])
+                ->prefix('/admin')
+                ->as('crm.')
+                ->group(base_path('routes/crm.php'));
+        });
+    }
+
+    protected function configureRateLimiting(): void
+    {
+        RateLimiter::for('api', function (Request $request) {
+            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
     }
 }
