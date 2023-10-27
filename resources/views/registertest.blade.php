@@ -21,15 +21,18 @@
     </div>
 
     <!-- Form -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form action="">
+    <form method="POST" action="{{ route('auth.register') }}">
+        @csrf
         <div class="space-y-12 m-12 flex-col items-center justify-center">
             <div class="flex w-72 flex-col gap-12">
                 <div class="relative h-11 w-full min-w-[200px]">
                     <input
-                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-gray-700 transition-all focus:ring-0 focus:outline-none"
+                        id="name"
+                        name="name"
+                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-orange-700 transition-all focus:ring-0 focus:outline-none"
                         placeholder=" "
+                        type="text"
+                        :value="old('name')" required autofocus autocomplete="name"
                     />
                     <label class="after:content[' '] outline-none ring-0 focus:ring-0 pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-orange-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-orange-500 peer-focus:after:scale-x-100 peer-focus:after:border-orange-500">
                         Name
@@ -37,8 +40,12 @@
                 </div>
                 <div class="relative h-11 w-full min-w-[200px]">
                     <input
-                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-gray-700 transition-all focus:ring-0 focus:outline-none"
+                        id="email"
+                        name="email"
+                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-orange-700 transition-all focus:ring-0 focus:outline-none"
                         placeholder=" "
+                        type="email"
+                        :value="old('email')" required autocomplete="username"
                     />
                     <label class="after:content[' '] outline-none ring-0 focus:ring-0 pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-orange-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-orange-500 peer-focus:after:scale-x-100 peer-focus:after:border-orange-500">
                         Email
@@ -46,8 +53,13 @@
                 </div>
                 <div class="relative h-11 w-full min-w-[200px]">
                     <input
-                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-gray-700 transition-all focus:ring-0 focus:outline-none"
+                        id="password"
+                        name="password"
+                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-orange-700 transition-all focus:ring-0 focus:outline-none"
                         placeholder=" "
+                        type="password"
+                        required
+                        autocomplete="new-password"
                     />
                     <label class="after:content[' '] outline-none ring-0 focus:ring-0 pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-orange-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-orange-500 peer-focus:after:scale-x-100 peer-focus:after:border-orange-500">
                         Password
@@ -55,8 +67,13 @@
                 </div>
                 <div class="relative h-11 w-full min-w-[200px]">
                     <input
-                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-gray-700 transition-all focus:ring-0 focus:outline-none"
+                        id="password_confirmation"
+                        name="password_confirmation"
+                        class="peer h-full w-full border-none ring-0 bg-transparent pt-4 pb-1.5 outline-none font-sans text-sm font-normal text-orange-700 transition-all focus:ring-0 focus:outline-none"
                         placeholder=" "
+                        type="password"
+                        required
+                        autocomplete="new-password"
                     />
                     <label class="after:content[' '] outline-none ring-0 focus:ring-0 pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-orange-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-orange-500 peer-focus:after:scale-x-100 peer-focus:after:border-orange-500">
                         Confirm password
@@ -69,7 +86,7 @@
                 </a>
             </div>
             <div>
-                <x-button class="w-full">
+                <x-button type="submit" class="w-full">
                     {{ __('Register') }}
                 </x-button>
             </div>
