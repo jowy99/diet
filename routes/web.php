@@ -7,8 +7,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::get('/logintest', function () {
+    return view('logintest');
+});
+
+Route::get('/registertest', function () {
+    return view('registertest');
 });
 
 Route::middleware('auth')->group(function () {
