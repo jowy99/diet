@@ -2,6 +2,6 @@
 
 @section('title', 'Dashboard')
 
-@section('main')
+@section('content')
     Home
 @endsection

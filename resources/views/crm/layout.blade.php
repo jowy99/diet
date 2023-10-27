@@ -17,10 +17,10 @@
         @vite(['resources/css/app.css', 'resources/js/crm.js'])
         @livewireStyles
     </head>
-    <body class="antialiased font-sans bg-gray-200">
+    <body class="antialiased font-sans bg-gray-200 dark:bg-gray-800">
         <div id="app" class="flex overflow-x-hidden md:overflow-x-auto">
             <div
-                class="bg-gray-100 transition-all duration-200 ease-out -ml-64 lg:ml-0 print:hidden"
+                class="bg-gray-100 transition-all duration-200 ease-out -ml-64 lg:ml-0 print:hidden dark:bg-gray-800"
                 style="min-width: 16rem; max-width: 16rem"
                 x-data="Sidebar()"
                 x-bind="root"

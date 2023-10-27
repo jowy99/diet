@@ -1,10 +1,10 @@
 <nav
-    class="relative z-10 shrink flex h-16 bg-white border-b shadow"
+    class="relative z-10 shrink flex h-16 bg-white border-b shadow dark:bg-gray-800 dark:border-gray-700"
     x-data="{}"
 >
     <button
         x-on:click.stop="$dispatch('sidebar-toggle')"
-        class="px-4 border-r border-gray-200 text-gray-500 hover:bg-gray-100 focus:outline-none"
+        class="px-4 border-r border-gray-200 text-gray-500 hover:bg-gray-100 focus:outline-none dark:border-gray-700"
     >
         <span class="sr-only">Open sidebar</span>
         <x-icon class="h-6 w-6" name="heroicon-o-bars-3"/>
