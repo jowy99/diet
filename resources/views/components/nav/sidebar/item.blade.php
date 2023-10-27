@@ -1,8 +1,9 @@
 @props([
-'route',
-'active' => false,
-'icon' => null,
+    'route',
+    'active' => false,
+    'icon' => null,
 ])
+
 <a
     href="{{ $route }}"
     class="@if($active) bg-green-600 text-white @else text-gray-300 hover:bg-green-700 hover:text-white transition duration-150 ease-in-out shadow-inner @endif group flex items-center pl-9 pr-6 py-3 text-sm"
