@@ -2,7 +2,7 @@
 
 @section('content')
 <x-crm.container>
-    <h2 class="text-2xl capitalize">new tag</h2>
+    <h2 class="text-2xl capitalize text-beige-500">new dish</h2>
     <div>
         <form method="POST" action="{{ route('crm.dishes.store') }}">
             @csrf
