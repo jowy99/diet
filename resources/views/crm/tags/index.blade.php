@@ -35,7 +35,7 @@
                 <td class="flex py-4">
                     <a
                         class="flex flex-1 justify-center"
-                        href=""
+                        href="{{ route('crm.tags.edit', $tag->id) }}"
                     >
                         <x-icon class="h-6 w-6 text-orange-600" name="heroicon-o-pencil-square"/>
                     </a>

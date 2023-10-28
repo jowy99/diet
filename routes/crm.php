@@ -10,6 +10,8 @@ use App\Http\Controllers\Crm\Dishes\StoreDishesController;
 
 // Tags
 use App\Http\Controllers\Crm\Tags\IndexTagsController;
+use App\Http\Controllers\Crm\Tags\EditTagController;
+use App\Http\Controllers\Crm\Tags\UpdateTagController;
 
 Route::middleware('admin')
     ->group(function () {
@@ -29,5 +31,7 @@ Route::prefix('tags')
     ->as('tags.')
     ->group(function () {
         Route::get('', IndexTagsController::class)->name('index');
+        Route::get('{id}/edit', EditTagController::class)->name('edit');
+        Route::post('{id}/update', UpdateTagController::class)->name('update');
     });
 

@@ -3,7 +3,8 @@
     'name',
     'class' => '',
     'type' => '',
-    ':value' => '',
+    'value' => '',
+    'artValue' => '',
     'autofocus' => false,
     'required' => false,
     'autocomplete' => false,
@@ -16,7 +17,8 @@
         name="{{ $name }}"
         class="peer h-full w-full rounded-[7px] border border-orange-200 border-t-transparent bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-orange-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-orange-200 placeholder-shown:border-t-orange-200 focus:border-2 focus:border-orange-500 focus:border-t-transparent focus:outline-0 focus:ring-0 disabled:border-0 disabled:bg-orange-50"
         type="{{ $type }}"
-        :value="old()"
+        value="{{ $value }}"
+        :value="old({{ $artValue }})"
         placeholder=" "
         @if($required)required="required"@endif
         @if($autofocus)autofocus="autofocus"@endif
