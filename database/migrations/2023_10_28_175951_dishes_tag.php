@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
@@ -8,16 +9,19 @@ use Illuminate\Support\Facades\Schema;
 return new class () extends Migration {
     public function up(): void
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('type')->unique();
+        Schema::create('dishes_tag', function (Blueprint $table) {
+            $table->foreignId('dishes_id')
+                ->references('id')
+                ->on('dishes');
+            $table->foreignId('tag_id')
+                ->references('id')
+                ->on('tags');
             $table->timestamps();
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('dishes_tag');
     }
 };

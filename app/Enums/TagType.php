@@ -12,7 +12,7 @@ enum TagType
     public function color(): string
     {
         return match ($this) {
-            self::Potato => 'text-white bg-orange-300',
+            self::Potato => 'text-white bg-sky-300',
             self::Fish => 'text-white bg-blue-500',
         };
     }
