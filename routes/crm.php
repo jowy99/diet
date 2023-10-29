@@ -1,17 +1,17 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
+// Dishes
+use App\Http\Controllers\Crm\Dishes\AddDishesController;
+use App\Http\Controllers\Crm\Dishes\IndexDishesController;
+use App\Http\Controllers\Crm\Dishes\StoreDishesController;
 use App\Http\Controllers\Crm\ShowAdminDashboardController;
 
-// Dishes
-use App\Http\Controllers\Crm\Dishes\IndexDishesController;
-use App\Http\Controllers\Crm\Dishes\AddDishesController;
-use App\Http\Controllers\Crm\Dishes\StoreDishesController;
-
-// Tags
-use App\Http\Controllers\Crm\Tags\IndexTagsController;
-use App\Http\Controllers\Crm\Tags\EditTagController;
-use App\Http\Controllers\Crm\Tags\UpdateTagController;
+// Ingredient Tags
+use App\Http\Controllers\Crm\IngredientsTags\EditIngredientTagController;
+use App\Http\Controllers\Crm\IngredientsTags\IndexIngredientTagController;
+use App\Http\Controllers\Crm\IngredientsTags\UpdateIngredientTagController;
+// Time Tags
 
 Route::middleware('admin')
     ->group(function () {
@@ -27,11 +27,11 @@ Route::prefix('dishes')
     });
 
 
-Route::prefix('tags')
-    ->as('tags.')
+Route::prefix('ingredient-tags')
+    ->as('ingredient-tags.')
     ->group(function () {
-        Route::get('', IndexTagsController::class)->name('index');
-        Route::get('{id}/edit', EditTagController::class)->name('edit');
-        Route::post('{id}/update', UpdateTagController::class)->name('update');
+        Route::get('', IndexIngredientTagController::class)->name('index');
+        Route::get('{id}/edit', EditIngredientTagController::class)->name('edit');
+        Route::post('{id}/update', UpdateIngredientTagController::class)->name('update');
     });
 

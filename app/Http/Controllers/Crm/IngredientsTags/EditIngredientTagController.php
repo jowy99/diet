@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Crm\Tags;
+namespace App\Http\Controllers\Crm\IngredientsTags;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tag;
+use App\Models\IngredientsTag;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class EditTagController extends Controller
+class EditIngredientTagController extends Controller
 {
     public function __invoke(Request $request, int $id): View
     {
-        $tag = Tag::query()->findOrFail($id);
+        $tag = IngredientsTag::query()->findOrFail($id);
 
-        return view('crm.tags.edit')
+        return view('crm.ingredienttags.edit')
             ->with(['tag' => $tag]);
     }
 }

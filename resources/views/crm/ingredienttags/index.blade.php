@@ -21,7 +21,7 @@
             </thead>
             <tbody class="divide-y divide-gray-200">
             <?php
-            /** @var \App\Models\Tag $tag */ ?>
+            /** @var \App\Models\IngredientsTag $tag */ ?>
             @forelse($tags as $tag)
             <tr>
                 <td class="whitespace-nowrap py-4 pr-3 pl-4 text-sm font-medium text-beige-900 sm:pl-0">
@@ -35,7 +35,7 @@
                 <td class="flex py-4">
                     <a
                         class="flex flex-1 justify-center"
-                        href="{{ route('crm.tags.edit', $tag->id) }}"
+                        href="{{ route('crm.ingredient-tags.edit', $tag->id) }}"
                     >
                         <x-icon class="h-6 w-6 text-orange-600" name="heroicon-o-pencil-square"/>
                     </a>

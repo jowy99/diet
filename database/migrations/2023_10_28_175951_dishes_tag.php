@@ -13,9 +13,12 @@ return new class () extends Migration {
             $table->foreignId('dishes_id')
                 ->references('id')
                 ->on('dishes');
-            $table->foreignId('tag_id')
+            $table->foreignId('ingredient_tag_id')
                 ->references('id')
-                ->on('tags');
+                ->on('ingredients_tags');
+            $table->foreignId('time_tag_id')
+                ->references('id')
+                ->on('times_tags');
             $table->timestamps();
         });
     }
