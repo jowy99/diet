@@ -11,7 +11,11 @@ use App\Http\Controllers\Crm\ShowAdminDashboardController;
 use App\Http\Controllers\Crm\IngredientsTags\EditIngredientTagController;
 use App\Http\Controllers\Crm\IngredientsTags\IndexIngredientTagController;
 use App\Http\Controllers\Crm\IngredientsTags\UpdateIngredientTagController;
+
 // Time Tags
+use App\Http\Controllers\Crm\TimesTags\IndexTimeTagController;
+use App\Http\Controllers\Crm\TimesTags\EditTimeTagController;
+use App\Http\Controllers\Crm\TimesTags\UpdateTimeTagController;
 
 Route::middleware('admin')
     ->group(function () {
@@ -33,5 +37,13 @@ Route::prefix('ingredient-tags')
         Route::get('', IndexIngredientTagController::class)->name('index');
         Route::get('{id}/edit', EditIngredientTagController::class)->name('edit');
         Route::post('{id}/update', UpdateIngredientTagController::class)->name('update');
+    });
+
+Route::prefix('time-tags')
+    ->as('time-tags.')
+    ->group(function () {
+        Route::get('', IndexTimeTagController::class)->name('index');
+        Route::get('{id}/edit', EditTimeTagController::class)->name('edit');
+        Route::post('{id}/update', UpdateTimeTagController::class)->name('update');
     });
 
