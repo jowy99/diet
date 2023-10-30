@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Schema;
 return new class () extends Migration {
     public function up(): void
     {
-        Schema::create('dishes_tag', function (Blueprint $table) {
+        Schema::create('dishes_tags', function (Blueprint $table) {
             $table->foreignId('dishes_id')
                 ->references('id')
                 ->on('dishes');
@@ -25,6 +25,6 @@ return new class () extends Migration {
 
     public function down(): void
     {
-        Schema::dropIfExists('dishes_tag');
+        Schema::dropIfExists('dishes_tags');
     }
 };

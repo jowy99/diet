@@ -15,8 +15,8 @@ class StoreDishesController extends Controller
     public function __invoke(StoreDishesRequest $request): RedirectResponse
     {
         $data = $request->validated();
-        
-        $dishes  =  Dishes::query()->create($data);
+
+        $dishes = Dishes::query()->create($data);
 
         return Redirect::route('crm.dishes.index');
     }

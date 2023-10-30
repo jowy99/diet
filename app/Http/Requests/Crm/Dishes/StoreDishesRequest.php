@@ -11,10 +11,6 @@ class StoreDishesRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'description' => 'nullable',
-            'ingredients' => 'required',
-            'steps'=> 'required',
-            'notes' => 'nullable',
         ];
     }
     public function authorize(): bool

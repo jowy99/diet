@@ -14,28 +14,6 @@
                     required
                     label="Name"
                 ></x-form.input>
-                <x-form.textarea
-                    id="description"
-                    name="description"
-                    label="Description"
-                ></x-form.textarea>
-                <x-form.input
-                    id="ingredients"
-                    name="ingredients"
-                    type="text"
-                    required
-                    label="Ingredients"
-                ></x-form.input>
-                <x-form.textarea
-                    id="steps"
-                    name="steps"
-                    label="Steps"
-                ></x-form.textarea>
-                <x-form.textarea
-                    id="notes"
-                    name="notes"
-                    label="Notes"
-                ></x-form.textarea>
             </div>
             <div class="mt-4">
                 <x-button type="submit" class="w-full">{{ __('Save')  }}</x-button>
