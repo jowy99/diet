@@ -19,10 +19,9 @@
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">{{ $dish->name }}</td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">
+                            <td class="px-6 py-4 space-x-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">
                                 @foreach($dish->IngredientsTag as $tag)
-                                    <span class="{{ $tag->type->color() }}">{{ $tag->name }}</span>
-                                    <br>
+                                    <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $tag->type->color() }} shadow-md">{{ $tag->name }}</span>
                                 @endforeach
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">{{ $dish->time }}</td>
