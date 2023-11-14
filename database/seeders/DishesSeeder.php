@@ -19,5 +19,11 @@ class DishesSeeder extends Seeder
             ->get();
 
         $dishes = Dishes::factory()->count(10)->create();
+
+        foreach ($dishes as $dish)
+        {
+            $ntags = random_int(1, 4);
+            $dish->IngredientsTag()->attach($ingTags->random($ntags));
+        }
     }
 }

@@ -7,6 +7,8 @@ use App\Enums\IngredientTagType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 
 class IngredientsTag extends Model
@@ -21,11 +23,10 @@ class IngredientsTag extends Model
     ];
 
     /**
-     * @return BelongsToMany<Dishes>
+     * @return HasMany<Dishes>
      */
-    public function Dishes(): BelongsToMany
+    public function Dishes(): HasMany
     {
-        return $this->belongsToMany(Dishes::class, 'dishes_tags')
-            ->withTimestamps();
+        return $this->hasMany(Dishes::class, 'id');
     }
 }

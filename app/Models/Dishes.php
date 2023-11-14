@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 
 class Dishes extends Model
 {
@@ -16,10 +18,11 @@ class Dishes extends Model
     ];
 
     /**
-     * @return HasMany<IngredientsTag>
+     * @return BelongsToMany<IngredientsTag>
      */
-    public function IngredientsTag(): HasMany
+    public function IngredientsTag(): BelongsToMany
     {
-        return $this->hasMany(IngredientsTag::class, 'id');
+        return $this->belongsToMany(IngredientsTag::class, 'dishes_tags')
+            ->withTimestamps();
     }
 }

@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@test.com',
             'password' => Hash::make('admin'),
         ]);
-        $this->call(DishesSeeder::class);
         $this->call(IngredientsTagsSeeder::class);
+        $this->call(DishesSeeder::class);
     }
 }
