@@ -16,7 +16,14 @@ class StoreDishesController extends Controller
     {
         $data = $request->validated();
 
+        $Ingtags = array_keys(array_filter($data['IngTag'] ?? [], fn($tag) => $tag > 0));
+        $Timetags = $data['TimeTag'];
+        unset($data['IngTag']);
+        unset($data['TimeTag']);
+
         $dishes = Dishes::query()->create($data);
+        $dishes->IngredientsTag()->create($Ingtags);
+        $dishes->TimesTag()->create($Timetags);
 
         return Redirect::route('crm.dishes.index');
     }

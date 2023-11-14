@@ -11,6 +11,9 @@ class StoreDishesRequest extends FormRequest
     {
         return [
             'name' => 'required',
+            'TimeTag' => 'required',
+            'IngTag' => 'required',
+            'IngTag.*' => ['boolean'],
         ];
     }
     public function authorize(): bool

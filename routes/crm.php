@@ -39,11 +39,3 @@ Route::prefix('ingredient-tags')
         Route::post('{id}/update', UpdateIngredientTagController::class)->name('update');
     });
 
-Route::prefix('time-tags')
-    ->as('time-tags.')
-    ->group(function () {
-        Route::get('', IndexTimeTagController::class)->name('index');
-        Route::get('{id}/edit', EditTimeTagController::class)->name('edit');
-        Route::post('{id}/update', UpdateTimeTagController::class)->name('update');
-    });
-
