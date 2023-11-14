@@ -20,7 +20,7 @@ enum IngredientTagType
     {
         return match ($this) {
             self::Red_meat => 'text-white bg-red-600',
-            self::White_meat => 'text-oak-600 bg-gradient-to-r from-red-600 to-white',
+            self::White_meat => 'text-oak-600 bg-gradient-to-r from-red-500 to-white',
             self::Vegetable => 'text-white bg-green-500',
             self::Fruit => 'text-white bg-amber-500',
             self::White_fish => 'text-oak-600 bg-gradient-to-r from-blue-500 to-white',

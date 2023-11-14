@@ -12,13 +12,6 @@ class AddDishesController extends Controller
 {
     public function __invoke(): View
     {
-        $ingTags = IngredientsTag::query()
-            ->select(['id'])
-            ->get();
-        $ntags = random_int(1, 4);
-
-        dd($ingTags->random($ntags,true));
-
         $IngsTags = IngredientsTag::query()
             ->get();
 
