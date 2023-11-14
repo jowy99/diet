@@ -20,7 +20,7 @@ class DishesFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'time' => $this->faker->numberBetween(1,4),
+            'time' => $this->faker->randomElement(['Short', 'Mid', 'Mid_long', 'Long']),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

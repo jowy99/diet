@@ -11,7 +11,7 @@ class StoreDishesRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'TimeTag' => 'required',
+            'time' => 'required',
             'IngTag' => 'required',
             'IngTag.*' => ['boolean'],
         ];

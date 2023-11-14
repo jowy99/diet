@@ -19,10 +19,10 @@
                 <h2>Time expend</h2>
                 <div class="grid grid-cols-2 gap-4">
                     <select name="time" id="time">
-                        <option value="1">15-20 min</option>
-                        <option value="2">30-40 min</option>
-                        <option value="3">1h</option>
-                        <option value="4">+1h</option>
+                        <option value="Short">15-20 min</option>
+                        <option value="Mid">30-40 min</option>
+                        <option value="Mid_long">1h</option>
+                        <option value="Long">+1h</option>
                     </select>
                 </div>
             </div>
