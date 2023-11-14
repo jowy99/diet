@@ -19,16 +19,16 @@ enum IngredientTagType
     public function color(): string
     {
         return match ($this) {
-            self::Red_meat => 'text-white bg-sky-300',
-            self::White_meat => 'text-white bg-blue-500',
-            self::Vegetable => 'text-white bg-blue-500',
-            self::Fruit => 'text-white bg-blue-500',
+            self::Red_meat => 'text-white bg-red-300',
+            self::White_meat => 'text-white bg-gradient-to-r from-red-300 to-white',
+            self::Vegetable => 'text-white bg-green-500',
+            self::Fruit => 'text-white bg-amber-500',
             self::White_fish => 'text-white bg-blue-500',
-            self::Blue_fish => 'text-white bg-blue-500',
-            self::Legume => 'text-white bg-blue-500',
-            self::Puree => 'text-white bg-blue-500',
-            self::Soup => 'text-white bg-blue-500',
-            self::Carbohydrates => 'text-white bg-blue-500',
+            self::Blue_fish => 'text-white bg-gradient-to-r from-blue-500 to-white',
+            self::Legume => 'text-white bg-oak-500',
+            self::Puree => 'text-white bg-orange-500',
+            self::Soup => 'text-white bg-skin-500',
+            self::Carbohydrates => 'text-white bg-wine-500',
         };
     }
 }

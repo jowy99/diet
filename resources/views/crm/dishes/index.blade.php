@@ -10,6 +10,7 @@
                         <thead>
                         <tr>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-beige-500 uppercase">Name</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-beige-500 uppercase">Ingredients</th>
                             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-beige-500 uppercase">Time</th>
                             <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-beige-500 uppercase">Action</th>
                         </tr>
@@ -18,6 +19,12 @@
                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                         <tr>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">{{ $dish->name }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">
+                                @foreach($dish->IngredientsTag as $tag)
+                                    <span class="{{ $tag->type->color() }}">{{ $tag->name }}</span>
+                                    <br>
+                                @endforeach
+                            </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">{{ $dish->time }}</td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a class="text-red-500 hover:text-red-700" href="#">Delete</a>
