@@ -1,7 +1,7 @@
 @extends('layouts.logins')
 
 @section('main')
-<div class="sm:flex sm:w-1/2 sm:items-center sm:justify-center shadow-md rounded-md bg-light_beige-500 mx-4 mt-8 sm:mt-0">
+<div class="w-11/12 sm:flex sm:w-1/2 sm:items-center sm:justify-center shadow-md rounded-md bg-light_beige-500 mx-4 mt-8 sm:mt-0">
 
     <div class="hidden sm:w-1/2 sm:flex">
         <img src="{{ url('/images/Lata.png') }}" alt="" class="w-full h-full rounded-tl-md rounded-bl-md object-fill">
@@ -85,7 +85,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="flex z-20 absolute top-0 left-0 sm:hidden">
+                <div class="flex z-20 absolute top-32 left-24 sm:hidden">
                     <img src="{{ url('/images/Lata.png') }}" alt="" class="w-full h-full opacity-10 select-none">
                 </div>
                 <div class="flex items-center justify-end mt-4">
