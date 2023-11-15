@@ -24,7 +24,9 @@
                                     <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $tag->type->color() }} shadow-md">{{ $tag->name }}</span>
                                 @endforeach
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">{{ $dish->time }}</td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">
+                                <span>{{ $dish->time }}</span>
+                            </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a class="text-red-500 hover:text-red-700" href="#">Delete</a>
                             </td>

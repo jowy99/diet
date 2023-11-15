@@ -7,6 +7,7 @@ use App\Enums\TimeTagType;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use App\Models\Dishes;
+use Illuminate\Support\Arr;
 
 class IndexDishesController extends Controller
 {
@@ -15,12 +16,12 @@ class IndexDishesController extends Controller
         $dishes = Dishes::query()
             ->paginate(12);
 
-        $timetags = TimeTagType::cases();
+        $timetag = TimeTagType::cases();
 
         return view('crm.dishes.index')
             ->with([
                 'dishes' => $dishes,
-                'timetags' => $timetags
+                'timetags' => $timetag
             ]);
     }
 }
