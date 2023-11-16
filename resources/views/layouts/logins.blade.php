@@ -20,7 +20,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased dark:bg-zinc-800">
-        <main class="min-h-screen flex flex-col relative justify-center items-center dark:text-white dark:bg-gray-800 z-0">
+        <main class="min-h-screen flex flex-col relative justify-center items-center dark:text-white z-0">
             @yield('main')
         </main>
     </body>
