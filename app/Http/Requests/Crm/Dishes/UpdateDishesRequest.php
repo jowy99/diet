@@ -13,6 +13,7 @@ class UpdateDishesRequest extends FormRequest
             'name' => 'required',
             'time' => 'required',
             'IngTag' => 'required',
+            'IngTag.*' => ['boolean'],
         ];
     }
 

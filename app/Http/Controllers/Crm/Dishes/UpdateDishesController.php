@@ -16,11 +16,15 @@ class UpdateDishesController extends Controller
     {
         $data = $request->validated();
 
+        $Ingtags = array_keys(array_filter($data['IngTag'] ?? [], fn($tag) => $tag > 0));
+        unset($data['IngTag']);
+
         $dish = Dishes::query()
             ->findOrFail($id);
 
         $dish->update($data);
-
+        $dish->IngredientsTag()->sync($Ingtags);
+        
         return Redirect::route('web.dishes.details', $id);
     }
 }
