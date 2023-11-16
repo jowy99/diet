@@ -18,7 +18,7 @@ class DishesSeeder extends Seeder
             ->select(['id'])
             ->get();
 
-        $dishes = Dishes::factory()->count(10)->create();
+        $dishes = Dishes::factory()->count(14)->create();
 
         foreach ($dishes as $dish)
         {
