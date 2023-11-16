@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Crm\Dishes;
 
 use App\Http\Controllers\Controller;
 use App\Models\Dishes;
+use App\Models\IngredientsTag;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 
@@ -14,9 +15,13 @@ class EditDishesController extends Controller
     {
         $dishes = Dishes::query()->findOrFail($id);
 
+        $IngsTags = IngredientsTag::query()
+            ->get();
+
         return view('dishes.edit')
             ->with([
-                'dish' => $dishes
+                'dish' => $dishes,
+                'Ingstags' => $IngsTags
             ]);
     }
 }

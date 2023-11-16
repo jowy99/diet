@@ -36,7 +36,7 @@
 
         <!-- DishesList -->
         <div>
-            <div class="grid grid-cols-2 gap-4 mx-4">
+            <div class="grid grid-cols-1 gap-4 mx-4">
                 @forelse($dishes as $dish)
                 <a href="{{ route('web.dishes.details', $dish->id) }}">
                     <div class="w-full h-full space-y-4 bg-sand-500 border-1 border-dark_gray-500 shadow-md rounded-md ">
