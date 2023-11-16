@@ -14,7 +14,7 @@ class IndexIngredientTagController extends Controller
         $tags = IngredientsTag::query()
             ->get();
 
-        return view('crm.ingredienttags.index')
+        return view('ingredienttags.index')
             ->with(['tags' => $tags]);
     }
 }

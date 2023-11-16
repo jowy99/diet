@@ -2,9 +2,44 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// Dishes
+use App\Http\Controllers\Crm\Dishes\AddDishesController;
+use App\Http\Controllers\Crm\Dishes\IndexDishesController;
+use App\Http\Controllers\Crm\Dishes\StoreDishesController;
+use App\Http\Controllers\Crm\ShowAdminDashboardController;
+
+// Ingredient Tags
+use App\Http\Controllers\Crm\IngredientsTags\EditIngredientTagController;
+use App\Http\Controllers\Crm\IngredientsTags\IndexIngredientTagController;
+use App\Http\Controllers\Crm\IngredientsTags\UpdateIngredientTagController;
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+
+Route::get('/dashboard', ShowAdminDashboardController::class)->name('verified');
+
+Route::get('/user', function () {
+    return view('profile');
+})->name('user');
+
+Route::prefix('dishes')
+    ->as('dishes.')
+    ->group(function () {
+        Route::get('', IndexDishesController::class)->name('index');
+        Route::get('add', AddDishesController::class)->name('add');
+        Route::post('store', StoreDishesController::class)->name('store');
+    });
+
+
+Route::prefix('ingredient-tags')
+    ->as('ingredient-tags.')
+    ->group(function () {
+        Route::get('', IndexIngredientTagController::class)->name('index');
+        Route::get('{id}/edit', EditIngredientTagController::class)->name('edit');
+        Route::post('{id}/update', UpdateIngredientTagController::class)->name('update');
+    });
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

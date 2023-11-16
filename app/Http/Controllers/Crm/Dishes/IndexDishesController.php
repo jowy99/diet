@@ -18,7 +18,7 @@ class IndexDishesController extends Controller
 
         $timetag = TimeTagType::cases();
 
-        return view('crm.dishes.index')
+        return view('dishes.index')
             ->with([
                 'dishes' => $dishes,
                 'timetags' => $timetag

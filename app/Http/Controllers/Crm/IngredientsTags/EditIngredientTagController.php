@@ -14,7 +14,7 @@ class EditIngredientTagController extends Controller
     {
         $tag = IngredientsTag::query()->findOrFail($id);
 
-        return view('crm.ingredienttags.edit')
+        return view('ingredienttags.edit')
             ->with(['tag' => $tag]);
     }
 }

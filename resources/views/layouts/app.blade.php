@@ -25,6 +25,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased dark:bg-zinc-800">
+        @include('layouts.partials.navbar')
         <main class="min-h-screen flex flex-col relative justify-center items-center dark:text-white z-0">
             @yield('content')
         </main>

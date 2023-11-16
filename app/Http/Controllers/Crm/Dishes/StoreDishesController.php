@@ -23,6 +23,6 @@ class StoreDishesController extends Controller
         $dishes = Dishes::query()->create($data);
         $dishes->IngredientsTag()->sync($Ingtags);
 
-        return Redirect::route('crm.dishes.index');
+        return Redirect::route('dishes.index');
     }
 }

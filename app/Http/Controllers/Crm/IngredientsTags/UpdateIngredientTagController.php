@@ -19,6 +19,6 @@ class UpdateIngredientTagController extends Controller
         $tag = IngredientsTag::query()->findOrFail($id);
         $tag->update($data);
 
-        return Redirect::route('crm.ingredient-tags.edit', $tag->id);
+        return Redirect::route('ingredient-tags.edit', $tag->id);
     }
 }

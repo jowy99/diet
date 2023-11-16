@@ -1,5 +1,7 @@
 @extends('layouts.logins')
 
+@section('title', 'Register')
+
 @section('content')
 <div class="w-11/12 sm:flex sm:w-1/2 sm:items-center sm:justify-center shadow-md rounded-md bg-light_beige-500 mx-4 mt-8 sm:mt-0">
 

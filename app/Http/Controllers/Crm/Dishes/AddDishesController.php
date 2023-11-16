@@ -15,7 +15,7 @@ class AddDishesController extends Controller
         $IngsTags = IngredientsTag::query()
             ->get();
 
-        return view('crm.dishes.add')
+        return view('dishes.add')
             ->with([
                 'Ingstags' => $IngsTags,
             ]);

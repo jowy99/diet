@@ -31,7 +31,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('api')
                 ->group(base_path('routes/api.php'));
 
-            Route::middleware('web')
+            Route::middleware([
+                'web',
+                'auth',
+                'verified',
+            ])
                 ->as('web.')
                 ->group(base_path('routes/web.php'));
 
@@ -39,15 +43,6 @@ class RouteServiceProvider extends ServiceProvider
                 ->prefix('auth')
                 ->as('auth.')
                 ->group(base_path('routes/auth.php'));
-
-            Route::middleware([
-                'web',
-                'auth',
-                'verified',
-            ])
-                ->prefix('/')
-                ->as('verified.')
-                ->group(base_path('routes/verified.php'));
         });
     }
 

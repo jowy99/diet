@@ -10,6 +10,6 @@ class ShowAdminDashboardController extends Controller
 {
     public function __invoke(): View
     {
-        return view('crm.dashboard');
+        return view('dashboard');
     }
 }
