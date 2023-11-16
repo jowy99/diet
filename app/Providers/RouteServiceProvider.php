@@ -18,7 +18,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/admin';
+    public const HOME = '/';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -44,11 +44,10 @@ class RouteServiceProvider extends ServiceProvider
                 'web',
                 'auth',
                 'verified',
-                'admin',
             ])
-                ->prefix('/admin')
-                ->as('crm.')
-                ->group(base_path('routes/crm.php'));
+                ->prefix('/')
+                ->as('verified.')
+                ->group(base_path('routes/verified.php'));
         });
     }
 

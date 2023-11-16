@@ -1,10 +1,12 @@
-@extends('crm.layout')
+@extends('layouts.guest')
+
+@section('title', 'Add dish')
 
 @section('content')
 <x-crm.container>
     <h2 class="text-2xl capitalize text-beige-500">new dish</h2>
     <div>
-        <form method="POST" action="{{ route('crm.dishes.store') }}">
+        <form method="POST" action="{{ route('verified.dishes.store') }}">
             @csrf
             <div class="mt-4 space-y-6">
                 <x-form.input

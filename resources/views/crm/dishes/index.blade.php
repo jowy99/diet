@@ -1,4 +1,6 @@
-@extends('crm.layout')
+@extends('layouts.guest')
+
+@section('title', 'Dishes')
 
 @section('content')
 <x-crm.container>

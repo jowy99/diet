@@ -8,7 +8,7 @@
         <x-responsive-nav-link>
             <x-gmdi-restaurant-menu-s class="h-6 w-6" />
         </x-responsive-nav-link>
-        <x-responsive-nav-link :href="route('crm.dishes.index')" :active="request()->routeIs('crm.dishes.index')">
+        <x-responsive-nav-link :href="route('verified.dishes.index')" :active="request()->routeIs('verified.dishes.index')">
             <x-bx-dish class="h-6 w-6" />
         </x-responsive-nav-link>
         <x-responsive-nav-link>

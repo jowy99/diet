@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        {{--@formatter:off--}}
+        <title>@hasSection('title')@yield('title')@endIf</title>
+        {{--@formatter:on--}}
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=acme:400|albert-sans:100,200,300,400,500,600" rel="stylesheet" />
@@ -21,7 +25,7 @@
     </head>
     <body class="font-sans antialiased dark:bg-zinc-800">
         <main class="min-h-screen flex flex-col relative justify-center items-center dark:text-white z-0">
-            @yield('main')
+            @yield('content')
         </main>
     </body>
 </html>

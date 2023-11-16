@@ -20,15 +20,15 @@ enum IngredientTagType
     {
         return match ($this) {
             self::Red_meat => 'text-white bg-red-600',
-            self::White_meat => 'text-oak-600 bg-gradient-to-r from-red-500 to-white',
+            self::White_meat => 'text-dark_gray-600 bg-gradient-to-r from-red-500 to-white',
             self::Vegetable => 'text-white bg-green-500',
             self::Fruit => 'text-white bg-amber-500',
-            self::White_fish => 'text-oak-600 bg-gradient-to-r from-blue-500 to-white',
+            self::White_fish => 'text-dark_gray-600 bg-gradient-to-r from-blue-500 to-white',
             self::Blue_fish => 'text-white bg-blue-500',
-            self::Legume => 'text-white bg-oak-500',
+            self::Legume => 'text-white bg-brown-500',
             self::Puree => 'text-white bg-beige-500',
             self::Soup => 'text-white bg-yellow-400',
-            self::Carbohydrates => 'text-oak-600 bg-skin-500',
+            self::Carbohydrates => 'text-dark_gray-600 bg-light_beige-500',
         };
     }
 }

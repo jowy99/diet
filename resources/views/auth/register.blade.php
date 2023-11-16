@@ -1,6 +1,6 @@
 @extends('layouts.logins')
 
-@section('main')
+@section('content')
 <div class="w-11/12 sm:flex sm:w-1/2 sm:items-center sm:justify-center shadow-md rounded-md bg-light_beige-500 mx-4 mt-8 sm:mt-0">
 
     <div class="hidden sm:w-1/2 sm:flex">
@@ -11,7 +11,7 @@
         <!-- Header -->
         <div class="flex items-center justify-center p-8 sm:grid sm:grid-cols-[10%_90%]">
             <div class="absolute left-8 sm:static">
-                <a href="{{ route('web.home') }}">
+                <a href="{{ route('auth.welcome') }}">
                     <x-heroicon-o-arrow-left class="w-6 h-6 text-salmon-300 hover:text-salmon-100" />
                 </a>
             </div>
