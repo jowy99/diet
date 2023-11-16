@@ -26,7 +26,7 @@
     </head>
     <body class="font-sans antialiased dark:bg-zinc-800">
         @include('layouts.partials.navbar')
-        <main class="min-h-screen flex flex-col relative justify-center items-center dark:text-white z-0">
+        <main class="min-h-screen mb-32 flex flex-col relative justify-center items-center dark:text-white z-0">
             @yield('content')
         </main>
     </body>

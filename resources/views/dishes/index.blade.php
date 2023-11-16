@@ -3,48 +3,41 @@
 @section('title', 'Dishes')
 
 @section('content')
-<x-crm.container>
-    <div class="flex flex-col w-full">
-        <div class="-m-1.5 overflow-x-auto">
-            <div class="p-1.5 min-w-full inline-block align-middle">
-                <div class="overflow-hidden">
-                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead>
-                        <tr>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-beige-500 uppercase">Name</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-beige-500 uppercase">Ingredients</th>
-                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-beige-500 uppercase">Time</th>
-                            <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-beige-500 uppercase">Action</th>
-                        </tr>
-                        </thead>
-                        @forelse($dishes as $dish)
-                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">{{ $dish->name }}</td>
-                            <td class="px-6 py-4 space-x-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">
+<div>
+    <h2 class="p-8 text-4xl text-deep_purple-500 font-semibold text-center">Dishes</h2>
+
+    <!-- SearchBar -->
+    <div></div>
+
+    <div>
+        <!-- Tags -->
+        <div></div>
+
+        <!-- DishesList -->
+        <div>
+            <div class="grid grid-cols-2 gap-4 mx-4">
+                @foreach($dishes as $dish)
+                    <div class="w-full h-full space-y-4 bg-sand-500 border-1 border-dark_gray-500 shadow-md rounded-md ">
+                        <div class="relative">
+                            <div class="absolute z-10 top-1 left-1">
                                 @foreach($dish->IngredientsTag as $tag)
-                                    <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $tag->type->color() }} shadow-md">{{ $tag->name }}</span>
+                                <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $tag->type->color() }} shadow-md">{{ $tag->name }}</span>
                                 @endforeach
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-ocher-500">
-                                <span>{{ $dish->time }}</span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a class="text-red-500 hover:text-red-700" href="#">Delete</a>
-                            </td>
-                        </tr>
-                        @empty
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap font-semibold text-wine-50" colspan="4">
-                                {{ __('Tabla vacía') }}
-                            </td>
-                        </tr>
-                        </tbody>
-                        @endforelse
-                    </table>
-                </div>
+                            </div>
+                            <div class="">
+                                <img src="https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg"
+                                     class="w-full h-full rounded-tr-md rounded-tl-md"
+                                     alt="">
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-deep_purple-500 font-semibold">{{ $dish->name }}</p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>
-</x-crm.container>
+
+</div>
 @endsection

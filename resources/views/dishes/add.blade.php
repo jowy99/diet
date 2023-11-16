@@ -3,7 +3,7 @@
 @section('title', 'Add dish')
 
 @section('content')
-<x-crm.container>
+<x-app.container>
     <h2 class="text-2xl capitalize text-beige-500">new dish</h2>
     <div>
         <form method="POST" action="{{ route('verified.dishes.store') }}">
@@ -47,5 +47,5 @@
             </div>
         </form>
     </div>
-</x-crm.container>
+</x-app.container>
 @endsection
