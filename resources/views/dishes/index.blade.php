@@ -38,6 +38,7 @@
         <div>
             <div class="grid grid-cols-2 gap-4 mx-4">
                 @forelse($dishes as $dish)
+                <a href="{{ route('web.dishes.details', $dish->id) }}">
                     <div class="w-full h-full space-y-4 bg-sand-500 border-1 border-dark_gray-500 shadow-md rounded-md ">
                         <div class="relative h-10/12 w-full">
                             <div class="absolute z-10 top-1 left-1 space-y-1">
@@ -55,6 +56,7 @@
                             <p class="text-deep_purple-500 font-semibold">{{ $dish->name }}</p>
                         </div>
                     </div>
+                </a>
                 @empty
                     <p>There are no dishes yet.</p>
                 @endforelse

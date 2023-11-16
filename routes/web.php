@@ -7,6 +7,8 @@ use App\Http\Controllers\Crm\Dishes\AddDishesController;
 use App\Http\Controllers\Crm\Dishes\IndexDishesController;
 use App\Http\Controllers\Crm\Dishes\StoreDishesController;
 use App\Http\Controllers\Crm\ShowAdminDashboardController;
+use App\Http\Controllers\Crm\Dishes\DetailsDishesController;
+use App\Http\Controllers\Crm\Dishes\EditDishesController;
 
 // Ingredient Tags
 use App\Http\Controllers\Crm\IngredientsTags\EditIngredientTagController;
@@ -30,6 +32,8 @@ Route::prefix('dishes')
         Route::get('', IndexDishesController::class)->name('index');
         Route::get('add', AddDishesController::class)->name('add');
         Route::post('store', StoreDishesController::class)->name('store');
+        Route::get('{id}/details', DetailsDishesController::class)->name('details');
+        Route::get('{id}/edit', EditDishesController::class)->name('edit');
     });
 
 
