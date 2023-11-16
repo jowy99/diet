@@ -36,7 +36,7 @@
                 <div class="space-y-6">
                     <h2 class="text-xl">Time</h2>
                     <div class="flex flex-col gap-y-6 gap-x-4">
-                        <select name="recipe_duration" id="recipe_duration" class="p-2 border rounded text-dark_gray-500">
+                        <select name="time" id="time" class="p-2 border rounded text-dark_gray-500">
                             <option value="Short"  {{ $dish->time == 'Short' ? 'selected' : ''}}>15-20 minutos</option>
                             <option value="Mid" {{ $dish->time == 'Mid' ? 'selected' : ''}}>30 minutos</option>
                             <option value="Mid_long" {{ $dish->time == 'Mid_long' ? 'selected' : ''}}>1 hora</option>
@@ -51,7 +51,7 @@
                     <div class="flex flex-col gap-y-6 gap-x-4">
                         @foreach($Ingstags as $tag)
                         <x-form.input-toggle
-                            name="tags[{{ $tag->id }}]"
+                            name="IngTag[{{ $tag->id }}]"
                             :on="$dish->IngredientsTag->contains($tag->id)"
                         >
                       <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $tag->type->color() }} shadow-md">
