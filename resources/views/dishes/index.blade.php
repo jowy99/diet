@@ -4,7 +4,13 @@
 
 @section('content')
 <div>
-    <h2 class="p-8 text-4xl text-deep_purple-500 font-semibold text-center">Dishes</h2>
+
+    <div class="relative flex items-center justify-center">
+        <h2 class="p-8 text-4xl text-deep_purple-500 font-semibold text-center mx-auto">Dishes</h2>
+        <a href="{{ route('web.dishes.add') }}" class="p-2 absolute rounded-xl bg-salmon-500 left-3/4">
+            <x-tabler-plus class="h-4 w-4 text-white" />
+        </a>
+    </div>
 
     <!-- SearchBar -->
     <div class="mx-4 mb-8 space-y-2">
@@ -31,10 +37,10 @@
         <!-- DishesList -->
         <div>
             <div class="grid grid-cols-2 gap-4 mx-4">
-                @foreach($dishes as $dish)
+                @forelse($dishes as $dish)
                     <div class="w-full h-full space-y-4 bg-sand-500 border-1 border-dark_gray-500 shadow-md rounded-md ">
                         <div class="relative h-10/12 w-full">
-                            <div class="absolute z-10 top-1 left-1">
+                            <div class="absolute z-10 top-1 left-1 space-y-1">
                                 @foreach($dish->IngredientsTag as $tag)
                                 <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $tag->type->color() }} shadow-md">{{ $tag->name }}</span>
                                 @endforeach
@@ -49,7 +55,9 @@
                             <p class="text-deep_purple-500 font-semibold">{{ $dish->name }}</p>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <p>There are no dishes yet.</p>
+                @endforelse
             </div>
         </div>
     </div>

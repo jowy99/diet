@@ -12,9 +12,11 @@ return new class () extends Migration {
         Schema::create('dishes_tags', function (Blueprint $table) {
             $table->foreignId('dishes_id')
                 ->references('id')
+                ->cascadeOnDelete()
                 ->on('dishes');
             $table->foreignId('ingredients_tag_id')
                 ->references('id')
+                ->cascadeOnDelete()
                 ->on('ingredients_tags');
             $table->timestamps();
         });

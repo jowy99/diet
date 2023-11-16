@@ -7,6 +7,9 @@
     "require": {
         "php": "^8.1",
         "blade-ui-kit/blade-heroicons": "^2.1",
+        "blade-ui-kit/blade-icons": "^1.5",
+        "blade-ui-kit/blade-ui-kit": "^0.4.0",
+        "brunocfalcao/blade-feather-icons": "^3.0",
         "codeat3/blade-google-material-design-icons": "^1.18",
         "codeat3/blade-radix-icons": "^1.6",
         "codeat3/blade-system-uicons": "^1.6",
