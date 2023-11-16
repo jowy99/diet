@@ -9,7 +9,7 @@
     <!-- SearchBar -->
     <div class="mx-4 mb-8 space-y-2">
         <h2 class="text-2xl text-ocher-500 font-semibold">Looking for some dish?</h2>
-        <form action="">
+        <form action="" method="get" role="search">
             <div class="relative z-0 flex flex-1 items-center justify-center sm:absolute sm:inset-0">
                 <div class="w-full sm:max-w-xs">
                     <label for="search" class="sr-only">Search</label>

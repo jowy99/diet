@@ -7,14 +7,17 @@ use App\Enums\TimeTagType;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use App\Models\Dishes;
-use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
 
 class IndexDishesController extends Controller
 {
-    public function __invoke(): View
+    public function __invoke(Request $request): View
     {
         $dishes = Dishes::query()
-            ->paginate(12);
+            ->when(!empty($request->search), function ($query) use ($request){
+                return $query->where('name', '=', $request->search);
+            })
+            ->get();
 
         $timetag = TimeTagType::cases();
 
