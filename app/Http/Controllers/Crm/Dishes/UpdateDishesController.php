@@ -24,7 +24,7 @@ class UpdateDishesController extends Controller
 
         $dish->update($data);
         $dish->IngredientsTag()->sync($Ingtags);
-        
+
         return Redirect::route('web.dishes.details', $id);
     }
 }
