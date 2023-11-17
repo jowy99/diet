@@ -47,7 +47,7 @@
                                 @endforeach
                             </div>
                             <div class="">
-                                <img src="https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg"
+                                <img src="{{ $dish->getFirstMedia('dishes')->getUrl('web') }}"
                                      class="w-full h-full rounded-tr-md rounded-tl-md"
                                      alt="">
                             </div>

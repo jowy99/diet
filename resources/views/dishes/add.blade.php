@@ -3,49 +3,81 @@
 @section('title', 'Add dish')
 
 @section('content')
-<x-app.container>
-    <h2 class="text-2xl capitalize text-beige-500">new dish</h2>
-    <div>
-        <form method="POST" action="{{ route('web.dishes.store') }}">
+<div class="min-h-screen bg-sand-100">
+    <div class="">
+        <img src="https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg"
+             class="w-full h-full"
+             alt="">
+    </div>
+    <div class="w-full h-full px-4">
+        <div class="absolute top-4 left-4 bg-sand-500 p-2 rounded-xl shadow-md sm:static">
+            <a href="{{ route('web.dishes.index') }}">
+                <x-heroicon-o-arrow-left class="w-6 h-6 text-white" />
+            </a>
+        </div>
+        <div class="pt-8 relative flex items-center justify-start">
+            <h2 class="p-2 font-semibold text-4xl">Dish</h2>
+        </div>
+        <form method="post" action="{{ route('web.dishes.store') }}" enctype="multipart/form-data">
             @csrf
-            <div class="mt-4 space-y-6">
-                <x-form.input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    label="Name"
-                ></x-form.input>
-            </div>
-            <div>
-                <h2>Time expend</h2>
-                <div class="grid grid-cols-2 gap-4">
-                    <select name="time" id="time">
-                        <option value="Short" class="">15-20 min</option>
-                        <option value="Mid">30-40 min</option>
-                        <option value="Mid_long">1h</option>
-                        <option value="Long">+1h</option>
-                    </select>
+            <div class="space-y-8 p-2">
+                <div class="space-y-6">
+                    <h2 class="text-xl">Name</h2>
+                    <x-form.input
+                        id="name"
+                        name="name"
+                        type="text"
+                        required
+                        label="Name"
+                    ></x-form.input>
                 </div>
-            </div>
-            <div>
-                <h2>Ingredient</h2>
-                <div class="grid grid-cols-2 gap-4">
-                    @foreach($Ingstags as $Ingtag)
+
+                <div class="space-y-6">
+                    <h2 class="text-xl">Image</h2>
+                    <input
+                        id="image"
+                        name="image"
+                        type="file"
+                        required
+                        label="Image"
+                        accept=".jpg, .png, .jpeg"
+                    />
+                </div>
+
+                <div class="space-y-6">
+                    <h2 class="text-xl">Time</h2>
+                    <div class="flex flex-col gap-y-6 gap-x-4">
+                        <select name="time" id="time" class="p-2 border rounded text-dark_gray-500">
+                            <option value="Short">15-20 minutos</option>
+                            <option value="Mid">30 minutos</option>
+                            <option value="Mid_long">1 hora</option>
+                            <option value="Long">Más de 1 hora</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="space-y-6">
+                    <h2 class="text-xl">Tags</h2>
+                    <div class="flex flex-col gap-y-6 gap-x-4">
+                        @foreach($Ingstags as $tag)
                         <x-form.input-toggle
-                            name="IngTag[{{ $Ingtag->id }}]"
+                            name="IngTag[{{ $tag->id }}]"
                         >
-                          <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $Ingtag->type->color() }} shadow-md">
-                            {{ $Ingtag->name }}
+                          <span class="inline-flex items-center rounded px-2 py-1 text-sm font-medium {{ $tag->type->color() }} shadow-md">
+                            {{ $tag->name }}
                           </span>
                         </x-form.input-toggle>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
-            </div>
-            <div class="mt-4">
-                <x-button type="submit" class="w-full">{{ __('Save')  }}</x-button>
+
+
+                <div>
+                    <x-button type="submit" class="w-full">{{ __('Save')  }}</x-button>
+                </div>
             </div>
         </form>
     </div>
-</x-app.container>
+</div>
 @endsection

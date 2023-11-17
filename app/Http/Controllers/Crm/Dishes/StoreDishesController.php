@@ -19,10 +19,15 @@ class StoreDishesController extends Controller
         $Ingtags = array_keys(array_filter($data['IngTag'] ?? [], fn($tag) => $tag > 0));
         unset($data['IngTag']);
 
-
         $dishes = Dishes::query()->create($data);
+
+        $dishes->addMediaFromRequest('image')
+            ->withResponsiveImages()
+            ->usingName($dishes->name)
+            ->toMediaCollection('dishes');
+
         $dishes->IngredientsTag()->sync($Ingtags);
 
-        return Redirect::route('dishes.index');
+        return Redirect::route('web.dishes.index');
     }
 }
