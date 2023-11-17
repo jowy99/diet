@@ -2,6 +2,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+// Menu
+use App\Http\Controllers\Crm\Menu\IndexMenuController;
+
 // Dishes
 use App\Http\Controllers\Crm\Dishes\AddDishesController;
 use App\Http\Controllers\Crm\Dishes\IndexDishesController;
@@ -26,6 +29,12 @@ Route::get('/dashboard', ShowAdminDashboardController::class)->name('verified');
 Route::get('/user', function () {
     return view('profile');
 })->name('user');
+
+Route::prefix('menu')
+    ->as('menu.')
+    ->group(function () {
+        Route::get('/', IndexMenuController::class)->name('index');
+    });
 
 Route::prefix('dishes')
     ->as('dishes.')

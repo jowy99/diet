@@ -5,7 +5,7 @@
         <x-responsive-nav-link :href="route('web.home')" :active="request()->routeIs('web.home')">
             <x-sui-home-door class="h-6 w-6" />
         </x-responsive-nav-link>
-        <x-responsive-nav-link>
+        <x-responsive-nav-link :href="route('web.menu.index')" :active="request()->routeIs('web.menu.*')">
             <x-gmdi-restaurant-menu-s class="h-6 w-6" />
         </x-responsive-nav-link>
         <x-responsive-nav-link :href="route('web.dishes.index')" :active="request()->routeIs('web.dishes.*')">
