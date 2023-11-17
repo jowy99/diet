@@ -3,7 +3,7 @@
 @section('title', 'Register')
 
 @section('content')
-<div class="w-11/12 sm:flex sm:w-1/2 sm:items-center sm:justify-center shadow-md rounded-md bg-light_beige-500 mx-4 mt-8 sm:mt-0">
+<div class="w-11/12 sm:flex sm:w-1/2 sm:items-center sm:justify-center shadow-md rounded-md bg-light_beige-500 mx-4 my-8 sm:mt-0">
 
     <div class="hidden sm:w-1/2 sm:flex">
         <img src="{{ url('/images/Lata.png') }}" alt="" class="w-full h-full rounded-tl-md rounded-bl-md object-fill">

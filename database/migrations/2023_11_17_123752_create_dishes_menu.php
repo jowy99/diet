@@ -5,24 +5,31 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class () extends Migration {
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
     public function up(): void
     {
-        Schema::create('dishes_tags', function (Blueprint $table) {
+        Schema::create('dishes_menu', function (Blueprint $table) {
+            $table->foreignId('menu_id')
+                ->references('id')
+                ->cascadeOnDelete()
+                ->on('menu');
             $table->foreignId('dishes_id')
                 ->references('id')
                 ->cascadeOnDelete()
                 ->on('dishes');
-            $table->foreignId('ingredients_tag_id')
-                ->references('id')
-                ->cascadeOnDelete()
-                ->on('ingredients_tags');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('dishes_tags');
+        Schema::dropIfExists('dishes_menu');
     }
 };

@@ -28,6 +28,15 @@ class Dishes extends Model implements HasMedia
             ->withTimestamps();
     }
 
+    /**
+     * @return BelongsToMany<Menu>
+     */
+    public function Menu(): BelongsToMany
+    {
+        return $this->belongsToMany(Menu::class, 'dishes_menu')
+            ->withTimestamps();
+    }
+
     public function registerMediaCollections(): void
     {
         $this->addMediaCollection('dishes')

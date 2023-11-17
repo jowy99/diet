@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // Menu
 use App\Http\Controllers\Crm\Menu\IndexMenuController;
+use App\Http\Controllers\Crm\Menu\CreateMenuController;
 
 // Dishes
 use App\Http\Controllers\Crm\Dishes\AddDishesController;
@@ -34,6 +35,7 @@ Route::prefix('menu')
     ->as('menu.')
     ->group(function () {
         Route::get('/', IndexMenuController::class)->name('index');
+        Route::post('create', CreateMenuController::class)->name('create');
     });
 
 Route::prefix('dishes')
