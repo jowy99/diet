@@ -5,7 +5,7 @@
 @section('content')
 <div class="min-h-screen bg-sand-100">
     <div class="">
-        <img src="https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg"
+        <img src="{{ $dish->getFirstMedia('dishes')->getUrl('web') }}"
              class="w-full h-full"
              alt="">
     </div>
@@ -31,6 +31,18 @@
                         required
                         label="Name"
                     ></x-form.input>
+                </div>
+
+                <div class="space-y-6">
+                    <h2 class="text-xl">Image</h2>
+                    <input
+                        id="image"
+                        name="image"
+                        type="file"
+                        required
+                        label="Image"
+                        accept=".jpg, .png, .jpeg"
+                    />
                 </div>
 
                 <div class="space-y-6">

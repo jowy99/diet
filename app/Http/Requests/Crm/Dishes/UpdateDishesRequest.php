@@ -14,9 +14,9 @@ class UpdateDishesRequest extends FormRequest
             'time' => 'required',
             'IngTag' => 'required',
             'IngTag.*' => ['boolean'],
+            'image' => ['required'],
         ];
     }
-
     public function authorize(): bool
     {
         return true;

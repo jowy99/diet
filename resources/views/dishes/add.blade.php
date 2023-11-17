@@ -4,18 +4,13 @@
 
 @section('content')
 <div class="min-h-screen bg-sand-100">
-    <div class="">
-        <img src="https://images.hola.com/imagenes/cocina/recetas/20220208204252/pizza-pepperoni-mozzarella/1-48-890/pepperoni-pizza-abob-t.jpg"
-             class="w-full h-full"
-             alt="">
-    </div>
     <div class="w-full h-full px-4">
         <div class="absolute top-4 left-4 bg-sand-500 p-2 rounded-xl shadow-md sm:static">
             <a href="{{ route('web.dishes.index') }}">
                 <x-heroicon-o-arrow-left class="w-6 h-6 text-white" />
             </a>
         </div>
-        <div class="pt-8 relative flex items-center justify-start">
+        <div class="pt-16 relative flex items-center justify-start">
             <h2 class="p-2 font-semibold text-4xl">Dish</h2>
         </div>
         <form method="post" action="{{ route('web.dishes.store') }}" enctype="multipart/form-data">
