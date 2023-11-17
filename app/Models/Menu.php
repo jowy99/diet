@@ -15,6 +15,8 @@ class Menu extends Model
         'id',
     ];
 
+    protected $table = 'menu';
+
     /**
      * @return BelongsToMany<Dishes>
      */

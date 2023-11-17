@@ -3,6 +3,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // Menu
+use App\Http\Controllers\Crm\Menu\AlertMenuController;
 use App\Http\Controllers\Crm\Menu\IndexMenuController;
 use App\Http\Controllers\Crm\Menu\CreateMenuController;
 
@@ -34,7 +35,8 @@ Route::get('/user', function () {
 Route::prefix('menu')
     ->as('menu.')
     ->group(function () {
-        Route::get('/', IndexMenuController::class)->name('index');
+        Route::get('/', AlertMenuController::class)->name('alert');
+        Route::get('index', IndexMenuController::class)->name('index');
         Route::post('create', CreateMenuController::class)->name('create');
     });
 
